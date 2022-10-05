@@ -79,20 +79,19 @@ class Bot(commands.Bot):
              application_id={app_id}
         )
         self.initial_extensions = [
-            
         """
         last = len(self.command_groups) - 1
         for index, group in enumerate(self.command_groups):
             if index == last:
                 mainPy += f"""
-                \"cogs.{group}\"
+            \"cogs.{group}\"
         ]"""
                 break
             mainPy += f"""
-                \"cogs.{group}\",
+            \"cogs.{group}\",
 """
 
-        mainPy += """
+        mainPy += f"""
     async def onReady(self):
         print(f\"{{self.user}} has connected successfully.\")
 
